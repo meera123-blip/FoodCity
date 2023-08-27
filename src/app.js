@@ -6,7 +6,7 @@ import HeaderComponent from "./components/Header";
 import BodyComponent from "./components/body";
 import Footer from "./components/footer"
 import About from "./components/About";
-import Error from "./components/error";
+import Error  from "./components/error"
 import Contact from "./components/contact";
 import ResturantMenu from "./components/ResturantMenu";
 import { IsOnline } from "./Utils/IsOnline";
