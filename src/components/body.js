@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ResturantCard from "./restrauCard";
 import { Link } from "react-router-dom";
 import Shimmer from "./shimmer";
@@ -20,7 +20,7 @@ const filteredrestaurants = getRestaurant(searchText);
     <input
       type="text"
       placeholder="Search for restaurant and dish"
-      class="w-full px-3 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+       className="w-full px-3 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-300 border border-black border-opacity-100"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);

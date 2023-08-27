@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import {useParams} from "react-router-dom";
-import { IMG_CDN_URL } from "../config";
 import { Shimmer } from "react-shimmer";
 import useRestaurant from "../Utils/useRestaurant";
 import { nanoid } from "nanoid";
-import { DISH_IMG } from "../config";
 import { addItem } from "../Utils/cartSlice";
 import { useDispatch } from "react-redux";
 import {useSelector} from "react-redux";
@@ -76,7 +74,7 @@ const ResturantMenu = () =>
   };
 
  
-    return (
+    return (!restaurant) ? <Shimmer/> :(
            
      <div className="bg-gray-100">
 

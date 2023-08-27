@@ -1,24 +1,21 @@
 
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
         <footer className="bg-gray-900 text-white py-6">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
                 <div className="flex items-center mb-4 md:mb-0">
-                    <h2 className="text-xl font-bold">Company Name</h2>
+                    <h2 className="text-xl font-bold">Food city</h2>
                 </div>
                 <div className="flex space-x-4">
                     <a href="#" className="text-gray-300 hover:text-white">
-                        <FontAwesomeIcon icon={faFacebook} className="text-xl" />
+                        {/* <FontAwesomeIcon icon={faFacebook} className="text-xl" /> */}
                     </a>
                     <a href="#" className="text-gray-300 hover:text-white">
-                        <FontAwesomeIcon icon={faTwitter} className="text-xl" />
+                        {/* <FontAwesomeIcon icon={faTwitter} className="text-xl" /> */}
                     </a>
                     <a href="#" className="text-gray-300 hover:text-white">
-                        <FontAwesomeIcon icon={faInstagram} className="text-xl" />
+                        {/* <FontAwesomeIcon icon={faInstagram} className="text-xl" /> */}
                     </a>
                 </div>
             </div>
