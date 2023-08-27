@@ -1,4 +1,4 @@
-
+import Faq from "../Utils/FAQ";
 
 const InstaMart = () => {
   return (
@@ -28,7 +28,9 @@ const InstaMart = () => {
           </div>
         </div>
       </div>
+      <Faq/>
     </section>
+  
   );
 };
 

@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 import {useSelector} from "react-redux";
 import { decreaseCart } from "../Utils/cartSlice";
 import { ItemTotal } from "../Utils/cartSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLeaf, faDrumstickBite } from '@fortawesome/free-solid-svg-icons';
 // import { handleAdditem } from "../Utils/handleDispatch";
 // import { handleDecreaseItem } from "../Utils/handleDispatch";
 // import { handleItemTotal } from "../Utils/handleDispatch";
@@ -18,6 +20,13 @@ const ResturantMenu = () =>
 {
     const {id} = useParams();
     const restaurant = useRestaurant(id);
+
+    const [vegOnly, setVegOnly] = useState(false);
+
+// Event handler for the checkbox toggle
+      const handleVegToggle = () => {
+        setVegOnly(!vegOnly);
+      };
 
 
     const dispatch = useDispatch();
@@ -132,6 +141,19 @@ const ResturantMenu = () =>
       <p className="text-gray-500">{restaurant?.cards[0]?.card?.card?.info.costForTwoMessage}</p>
     </div>
   </div>
+  <div className="flex items-center ml-4">
+  {/* Toggle Button */}
+  <div className="ml-auto">
+    <label htmlFor="vegToggle" className="text-gray-500 mr-2">Veg Only</label>
+    <input
+      type="checkbox"
+      id="vegToggle"
+      className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+      checked={vegOnly}
+       onChange={handleVegToggle}
+    />
+  </div>
+</div>
 </div> 
    
            
@@ -141,8 +163,12 @@ const ResturantMenu = () =>
     cardssss?.card?.card?.itemCards?.map((dishNames) => (
         <div className="bg-white p-3 sm:p-4 rounded-lg shadow-lg mb-4 sm:mb-0 max-w-screen-lg mx-auto flex justify-between items-center">
             <div className="flex items-center">
-                {/* ... */}
                 <div>
+                {dishNames?.card?.info?.isVeg === 1 ? (
+                            <FontAwesomeIcon icon={faLeaf} className="text-green-500 h-4 w-4 mr-1" />
+                        ) : (
+                            <FontAwesomeIcon icon={faDrumstickBite} className="text-red-500 h-4 w-4 mr-1" />
+                        )}
                     <h3 className="text-lg font-semibold" key={nanoid()}>
                         {dishNames?.card?.info?.name}
                     </h3>
