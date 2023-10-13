@@ -9,30 +9,22 @@ import { decreaseCart } from "../Utils/cartSlice";
 import { removeFromCart } from "../Utils/cartSlice";
 import { ItemTotal } from "../Utils/cartSlice";
 import EmptyCart from "../Utils/emptyCart";
-// import { handleAdditem } from "../Utils/handleDispatch";
-// import { handleDecreaseItem } from "../Utils/handleDispatch";
-// import { handleItemTotal } from "../Utils/handleDispatch";
+
 
 
 const Cart = () =>
 {
     const cartItems = useSelector(store => store.cart.items);
 
-   const calculateTotal = () =>
-   {
-    let Total=0;
-    cartItems.map((item) =>
-    {
-        const price = item.price !== undefined
-        ? item.price / 100
-        : item.defaultPrice / 100;
-
-        if(item.total)
-           Total += item.total;
-        else
-           Total += price;
-    })
-    return Total;
+    const calculateTotal = () => {
+        let Total = 0;
+        cartItems.map((item) => {
+          const price = item.price !== undefined ? item.price / 100 : item.defaultPrice / 100;
+      
+          if (item.total) Total += item.total;
+          else Total += price;
+        });
+        return Math.floor(Total); // Using Math.floor to convert to integer      
     
    }
     const dispatch = useDispatch();
